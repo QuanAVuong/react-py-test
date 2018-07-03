@@ -1,0 +1,1 @@
+alert("react-py's package.json/webpack setup seems to be working!");
