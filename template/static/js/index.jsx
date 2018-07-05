@@ -1,1 +1,5 @@
-alert("react-py's package.json/webpack setup seems to be working!");
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.render(<App />, document.getElementById("content"));
