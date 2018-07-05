@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import random
 
 app = Flask(__name__, static_folder="../static/dist", template_folder="../static")
 
@@ -6,9 +7,10 @@ app = Flask(__name__, static_folder="../static/dist", template_folder="../static
 def index():
     return render_template("index.html")
 
-@app.route("/hello")
-def hello():
-    return "Hello World!"
+@app.route("/greetings")
+def get_greetings():
+    greetings = ["Welcome", "Bienvenue", "Willkommen", "Bienvenido", "Benvenuto", "Kuwakaribisha"]
+    return random.choice(greetings)
 
 if __name__ == "__main__":
     app.run()
