@@ -1,3 +1,5 @@
+var $ = requrie("jquery");
+
 export default class Greetings extends React.Component {
     constructor(props) {
         super(props);
