@@ -5,4 +5,10 @@ export default class Greetings extends React.Component {
 
         this.getPythonGreetings = this.getPythonGreetings.bind(this); // makes "this" work in the callback
     }
+
+    personalize() {
+        this.setState({
+            greetings: greetings + " " + this.props.name + "!"
+        });
+    }
 }
