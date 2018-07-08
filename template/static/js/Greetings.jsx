@@ -1,11 +1,12 @@
-var $ = requrie("jquery");
+var $ = require("jquery");
 
 export default class Greetings extends React.Component {
     constructor(props) {
         super(props);
-        this.setState = {greeting: "Welcome " + this.props.name};
+        this.state = {greeting: "Welcome " + this.props.name};
 
-        this.getPythonGreetings = this.getPythonGreetings.bind(this); // makes "this" work in the callback
+        // binding functions not called with () to avoid getting this == undefined
+        this.getPythonGreetings = this.getPythonGreetings.bind(this); 
     }
 
     personalize() {
@@ -14,13 +15,24 @@ export default class Greetings extends React.Component {
         });
     }
 
+    getPythonGreetings() {
+        $.get(window.location.href + "Welcome",
+            (data) => {
+                console.log(data);
+                this.personalize(data);
+            }
+        )
+    }
+
     render() {
         return (
-            <h1> { this.state.greeting } </h1>
-            <hr/>
-            <Button bsSize="large" bsStyle="danger" onClick={this.getPythonGreetings} >
-                More Greetings!
-            </Button>
+            <div>
+                <h1> { this.state.greeting } </h1>
+                <hr/>
+                <Button bsSize="large" bsStyle="danger" onClick={this.getPythonGreetings} >
+                    More Greetings!
+                </Button>                
+            </div>
         )
     }
 }

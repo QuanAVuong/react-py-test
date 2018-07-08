@@ -8,7 +8,8 @@ export default class App extends React.Component {
         return (
             <PageHeader>
                 <div className="header-contents">
-                    <Greetings name="Quan" />
+                    <p>App.jsx</p>
+                    <Greetings name="World" />
                 </div>
             </PageHeader>
         );
