@@ -9,8 +9,8 @@ def index():
 
 @app.route("/greetings")
 def get_greetings():
-    greetings = ["Welcome", "Bienvenue", "Willkommen", "Bienvenido", "Benvenuto", "Kuwakaribisha"]
+    greetings = ["Welcome", "Bienvenue", "Willkommen", "Bienvenido", "Benvenuto", "Kuwakaribisha", "Bonvenon"]
     return random.choice(greetings)
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=3000)
+    app.run(host="127.0.0.1", port=3000, debug=True)
