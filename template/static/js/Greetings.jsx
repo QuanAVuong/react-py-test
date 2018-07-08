@@ -19,7 +19,7 @@ export default class Greetings extends React.Component {
     }
 
     getPythonGreetings() {
-        $.get(window.location.href + "Welcome",
+        $.get(window.location.href + "greetings",
             (data) => {
                 console.log(data);
                 this.personalize(data);
