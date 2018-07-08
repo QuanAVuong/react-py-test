@@ -1,3 +1,5 @@
+import React from "react";
+
 var $ = require("jquery");
 
 export default class Greetings extends React.Component {
