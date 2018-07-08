@@ -11,7 +11,7 @@ export default class Greetings extends React.Component {
         this.getPythonGreetings = this.getPythonGreetings.bind(this); 
     }
 
-    personalize() {
+    personalize(greeting) {
         this.setState({
             greeting: greeting + " " + this.props.name + "!"
         });
