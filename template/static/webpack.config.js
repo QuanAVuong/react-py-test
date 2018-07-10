@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const config = {
     entry:  __dirname + '/js/index.jsx',
     output: {
@@ -10,12 +12,23 @@ const config = {
     },
     module: {
         rules: [
-          {
-            test: /\.jsx?/,
-            exclude: /node_modules/,
-            use: 'babel-loader'
-          }
+            {
+                test: /\.jsx?/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader',
+                })
+            },
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('styles.css'),
+    ]
 };
+
 module.exports = config;
