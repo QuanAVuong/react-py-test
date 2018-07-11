@@ -8,7 +8,7 @@ const config = {
         filename: 'bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.css']
+        extensions: [".js", ".jsx", ".css"]
     },
     module: {
         rules: [
@@ -24,6 +24,10 @@ const config = {
                     use: 'css-loader',
                 })
             },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: 'file-loader'
+            }
         ]
     },
     plugins: [
