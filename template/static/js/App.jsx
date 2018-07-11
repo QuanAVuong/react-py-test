@@ -7,6 +7,12 @@ require('../css/fullstack.css');
 import HeaderBackgroundImage from '../images/header.jpg';
 
 export default class App extends React.Component {
+
+    addHeaderImg() {
+        let headerBg = new Image();
+        headerBg.src = HeaderBackgroundImage;
+    }
+
     render(){
         return (
             <PageHeader>
