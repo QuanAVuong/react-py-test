@@ -18,6 +18,7 @@ export default class App extends React.Component {
             <PageHeader>
                 <div className="header-contents">
                     <p>App.jsx</p>
+                    {this.addHeaderImg()}
                     <Greetings name="World" />
                 </div>
             </PageHeader>
