@@ -4,7 +4,8 @@ import { PageHeader } from "react-bootstrap";
 
 require('../css/fullstack.css');
 
-import HeaderBackgroundImage from '../images/header.jpg';
+// import HeaderBackgroundImage from '../images/header2.jpg';
+import HeaderBackgroundImage from '../images/1.gif';
 
 export default class App extends React.Component {
 
